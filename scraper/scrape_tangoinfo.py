@@ -1,5 +1,6 @@
 # this script grabs the current festival list
-# from tango.info/festivals
+# from tango.info/festivals/2016
+# change 2016 to any other year
 
 from bs4 import BeautifulSoup
 import urllib
@@ -18,7 +19,7 @@ def subpage(iurl):
   weburl = tdr[1].a['href']
   return weburl
 
-url = 'https://tango.info/festivals'
+url = 'https://tango.info/festivals/2016'
 r = urllib.urlopen(url)
 stew = BeautifulSoup(r,'lxml')
 
@@ -56,7 +57,7 @@ for row in soup:
 
 
 
-with open("../_temp/output_tangoinfo.json","w") as writeJSON:
+with open("../data/output_tangoinfo.json","w") as writeJSON:
   json.dump(mylists, writeJSON)
 
 
