@@ -49,6 +49,8 @@ def subpage(iurl):
       t.span.extract()
       when  = t.get_text()
       sdate,edate = daterangeparser.parse(when)
+      sdate=sdate.strftime("%Y-%m-%d")
+      edate=edate.strftime("%Y-%m-%d")
       
       print "Time is ",when 
       print "Start is ",sdate
@@ -98,7 +100,7 @@ def mainpage(url):
       mylist['emurl'] = a5
       mylist['extra_fsrurl'] = inturl
       mylist['extra_fsrtyp'] = etype
-      #mylists.append(mylist)
+      mylists.append(mylist)
     break
   print "NO MORE!!"
   return mylists
