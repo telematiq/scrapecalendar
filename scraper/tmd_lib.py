@@ -68,7 +68,7 @@ def mainpage(url):
         r = row.next()
       except:
         break
-      fullname = r.a.contents
+      fullname = ''.join(r.a.contents)
       intref = r.a['href']
       aplace = r.i.contents
       print "Found ", fullname
