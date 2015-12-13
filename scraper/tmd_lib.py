@@ -4,6 +4,7 @@
 
 from bs4 import BeautifulSoup
 import urllib2
+import datetime
 import requests
 import re
 
@@ -39,6 +40,11 @@ def subpage(iurl):
   if c > 0:
     url = links[0]['href']
   sdate,edate = when.split(' - ')
+  sd = datetime.datetime.strptime(sdate, "%d/%m/%Y")
+  sdate = sd.strftime("%Y-%m-%d")
+  ed = datetime.datetime.strptime(edate, "%d/%m/%Y")
+  edate = ed.strftime("%Y-%m-%d")
+  
   parts = where.split(', ')
   country = parts.pop()
   city = ' '.join(parts)
