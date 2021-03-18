@@ -8,4 +8,5 @@ scrape the calendars from a few Tango calendar publishers.
 * tangofestivals.net
 * tangomarathons.com
 * festivalsero.com
+* other
 
